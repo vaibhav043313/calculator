@@ -53,5 +53,15 @@ RSpec.describe StringCalculator, type: :model do
     it 'supports different delimiter' do
       expect(calculator.add('//;\n1;2;3')).to eq(6)
     end
+
+    context 'negative numbers' do
+      it 'raises an exception if it finds ome' do
+        expect { calculator.add('-1') }.to raise_error
+      end
+
+      it 'includes the negative numbers in the message' do
+        expect { calculator.add('-1,25,-42') }.to raise_error('Negative numbers not allowed: -1, -42')
+      end
+    end
   end
 end
