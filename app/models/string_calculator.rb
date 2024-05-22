@@ -6,10 +6,10 @@ class StringCalculator
   end
 
   def digits(string)
-    string.gsub('\n', delimiter).split(delimiter).map { |x| x.to_i }
+    string.gsub('\n', delimiter(string)).split(delimiter(string)).map { |x| x.to_i }
   end
 
-  def delimiter
-    ','
+  def delimiter(string)
+    @delimiter ||= string[0,2] == '//' ? delimiter = string[2,1] : ','
   end
 end
