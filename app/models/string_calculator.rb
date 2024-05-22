@@ -1,5 +1,7 @@
 class StringCalculator
-  def add(sring)
-    0
+  def add(string)
+    return 0 if string.empty?
+
+    string.to_i
   end
 end
