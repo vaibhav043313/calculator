@@ -1,5 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe StringCalculator, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'add' do
+    it 'return 0 for empty string' do
+      expect(StringCalculator.new.add('')).to eq(0)
+    end
+  end
 end
