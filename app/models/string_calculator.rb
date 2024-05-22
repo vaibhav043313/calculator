@@ -4,6 +4,8 @@ class StringCalculator
     return string.to_i unless string.include?(',')
 
     digit = string.split(',').map { |x| x.to_i }
-    digit[0] + digit[1]
+    return digit[0] + digit[1] if digit.size == 2
+
+    digit[0] + digit[1] + digit[2]
   end
 end

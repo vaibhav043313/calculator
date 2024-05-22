@@ -31,5 +31,11 @@ RSpec.describe StringCalculator, type: :model do
         expect(calculator.add('22,5')).to eq(27)
       end
     end
+
+    context '3 numbers' do
+      it 'returns 25 for 10,12,3' do
+        expect(calculator.add('10,12,3')).to eq(25)
+      end
+    end
   end
 end
