@@ -41,5 +41,9 @@ RSpec.describe StringCalculator, type: :model do
         expect(calculator.add('200,700,125')).to eq(1025)
       end
     end
+
+    it 'supports newline as delimiter' do
+      expect(calculator.add('1\n2')).to eq(3)
+    end
   end
 end
